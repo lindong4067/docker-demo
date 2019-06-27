@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-@Configuration
-@EnableDubbo(scanBasePackages = "com.example.dockerdemo.dubbo.ann.provider")
-@PropertySource("dubbo/ann/dubbo-provider.properties")
+//@Configuration
+//@EnableDubbo(scanBasePackages = "com.example.dockerdemo.dubbo.ann.provider")
+//@PropertySource("dubbo/ann/dubbo-provider.properties")
 public class ProviderConfiguration {
-    @Bean
+//    @Bean
     public ProviderConfig providerConfig() {
         ProviderConfig providerConfig = new ProviderConfig();
         providerConfig.setTimeout(1000);

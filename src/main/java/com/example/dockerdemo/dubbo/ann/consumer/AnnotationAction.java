@@ -4,7 +4,7 @@ import com.example.dockerdemo.dubbo.inf.DemoService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Component;
 
-@Component("annotationAction")
+//@Component("annotationAction")
 public class AnnotationAction {
 //    @Reference(interfaceClass = HelloService.class, version = AnnotationConstants.VERSION)
 //    private HelloService helloService;
@@ -12,7 +12,7 @@ public class AnnotationAction {
 //    @Reference(interfaceClass = GreetingService.class,
 //            version = AnnotationConstants.VERSION,
 //methods = {@Method(name = "greeting", timeout = 250, retries = 1)})
-    @Reference
+//    @Reference
     private DemoService demoService;
 
     public String doSayHello(String name) {
