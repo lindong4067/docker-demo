@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dockerdemo.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.dockerdemo.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="userName" jdbcType="VARCHAR" property="userName" />
+        <result column="passWord" jdbcType="VARCHAR" property="passWord" />
+        <result column="realName" jdbcType="VARCHAR" property="realName" />
+    </resultMap>
+
+    <select id="getUser" resultType="com.example.dockerdemo.entity.User">
+        select * from t_user where id = #{id}
+    </select>
+
+    <insert id="addUser" parameterType="com.example.dockerdemo.entity.User" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user (user_name, pass_word, real_name) values (#{userName}, #{passWord}, #{realName})
+    </insert>
+
+    <delete id="deleteUser">
+        delete from t_user when id = #{id}
+    </delete>
+</mapper>
